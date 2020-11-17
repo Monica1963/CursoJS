@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+    </head>
+    <body>
+        <!--12.	[LaClase]
+            Confeccionar un script que permita a un usuario ingresar nombre de alumno y notas en distintos vectores (condición de finalización → alumno = “”). 
+            Al finalizar la carga se pide:
+            a.	 Cantidad de alumnos cargados
+            b.	Cantidad de alumnos aprobados (nota >=6)
+            c.	Cantidad de alumnos promocionados
+            d.	Alumno/s con mayor nota (si son muchos mostrarlos todos)
+            e.	Alumno/s con menor nota
+            f.	Media de aprobados (Promedio de todos los alumnos aprobados)
+            g.	Media de desaprobados (Promedio de todos los alumnos desaprobados)
+            h.	Ordenar y mostrar los nombres de los alumnos por orden alfabético
+            i.	Cantidad de notas pares y cantidad de notas impares.
+        -->
+
+        <script>
+            const alumnos = [];
+            const notas = [];
+            let nombre = "";
+            let aprobados = 0;
+
+            do{
+                nombre = prompt("Ingrese nombre del alumno");
+                alumnos.push(nombre);
+                console.log(alumnos[alumnos.length-1]);
+                notas.push (parseInt(prompt("Ingrese la nota del alumno")))
+               
+            }
+            while(nombre != "");        
+
+            document.write(`son ${alumnos[1]} <br>`);
+            document.write(`Alumnos cargados: ${alumnos.length} <br>`);
+            for(let i = 0; i < notas.length; i++){
+                notas[i] >= 6 ? aprobados++ : null;
+                document.write(`Alumnos aprobados: `)
+            }
+
+
+        </script>
+    
+    </body>
+</html>
