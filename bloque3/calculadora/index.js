@@ -7,6 +7,12 @@ const handlerInput = (e) =>{
 }
 
 
+const limpiarCampos = () =>{
+    document.getElementById("num1").value = 0;
+    document.getElementById("num2").value = 0;
+    resultado.value = 0;
+}
+
 const operacion = (op="+") =>{
     switch(op){
         case '+': 
@@ -25,5 +31,7 @@ const operacion = (op="+") =>{
         default:
             alert("Operación no permitida");
     }
+    setTimeout(limpiarCampos, 2000);
 }
+
 
