@@ -1,0 +1,21 @@
+.titulo {
+    background-color: #e4ae0b;
+    color: #0F0C00; 
+    margin:  20px 25% 0px 25%;
+    text-align: center;
+    width: 30%;
+    
+}
+
+.centrada{
+    width: 30%;
+    margin: 0px 25% 0px 25%;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+
+
+visibility: hidden;
+
+}
