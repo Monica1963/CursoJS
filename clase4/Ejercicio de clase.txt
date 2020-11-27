@@ -1,6 +1,0 @@
-1. Armar una función para retornar el reverso de un string (prohibido usar funciones de javascript)
-2. Permitirle al usuario cargar 3 nombres y 3 notas de alumnos (concepto de arrays paralelos)
-    a. Mostrar el alumno con MAYOR nota
-    b. Mostrar el alumno con MENOR nota
-    c. Promedio de todos los alumnos
-Todo el código debe estar resuelto en arrow functions.
