@@ -25,7 +25,15 @@ const iniNuevo = () =>{
         document.querySelector("#turno").innerHTML = "Iniciando nueva partida...";
         setTimeout(() => {
                 limpiar();
-              }, 2000);
+              }, 1000);
+}
+
+const empate = () => {
+       // document.querySelector("#turno").innerHTML = "Fue un Empate";
+        alert("Fue un Empate!!");
+        setTimeout(() => {
+                iniNuevo();  
+        }, 1000);
 }
 
 const mensajeGanador = () =>{
@@ -37,16 +45,8 @@ const mensajeGanador = () =>{
         
         setTimeout(() => {
                 iniNuevo();  
-        }, 2000);
+        }, 1000);
         
-}
-
-const mensajeEmpate = () =>{
-        document.querySelector("#turno").innerHTML = "Fue un Empate!!!";
-        
-        setTimeout(() => {
-                iniNuevo(); 
-        }, 2000);
 }
 
 const verificarGanador = () => {
@@ -64,25 +64,25 @@ const verificarGanador = () => {
         
         if((f1 === f2 && f2 === f3 && f3 !== "") || (f4 === f5 && f5 === f6 && f6 !== "") || (f7 === f8 && f8 === f9 && f9 !== "")){
                 ganador = true;
-                console.log("horizontal");
+                //console.log("horizontal");
                 mensajeGanador();
                 
         }else if((f1 === f4 && f4 === f7 && f7 !== "") || (f2 === f5 && f5 === f8 && f8 !== "") || (f3 === f6 && f6 === f9 && f9 !== "")){        
                 ganador = true;
-                console.log("vertical");
+                //console.log("vertical");
                 mensajeGanador();
                 
         }else if((f1 === f5 && f5 === f9 && f9 !== "") || (f3 === f5 && f5 === f7 && f7 !== "")){ 
-                console.log("diagonal");
+                //console.log("diagonal");
                 ganador = true; 
                 mensajeGanador();
-                
-        }else if(contador === 9 && ganador===false){
-                mensajeEmpate();     
+        }else if(contador == 9 && ganador == false){
+                empate();
         }
              
 }
- 
+
+
 const armaColor = () =>{
         const digito = "0123456789ABCDEF";
         let color = "#";
@@ -112,7 +112,8 @@ const iniJuego = () =>{
         document.querySelector("#iniJuego").hidden= 'true';
         document.querySelector(".container").style.visibility= 'visible';
         document.querySelector("#turno").style.visibility= 'visible';
-        console.log(contador);
+        //console.log(contador);
+        
 }
 
 
@@ -128,9 +129,9 @@ const informarTurno = () => {
 //detecto el click y pinto segun el color del jugador
 const pintar = (id) =>{
         contador++; 
+        document.getElementById(id).style.color = 'white';
         
         //segun el jugador pinto la casilla
-      
         if(contador % 2 === 0){
                 document.getElementById(id).style.backgroundColor = document.getElementById("favcolor2").value;
                 document.getElementById(id).innerHTML = "&#9874;";
@@ -140,7 +141,7 @@ const pintar = (id) =>{
         }
 
        verificarGanador();
-                   
+                 
         //cambio el turno al otro jugador
         informarTurno();
 
@@ -171,6 +172,7 @@ function start() {
       //escucho para pintar las jugadas
       for (let i = 0; i < tablero.length; i++){
         tablero[i].addEventListener('click', () => pintar(tablero[i].id));
+        tablero[i].style.color = 'gray';
       }
 }
 
