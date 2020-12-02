@@ -1,3 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(to bottom, white, rgb(10, 186, 192));
+}
+
 #titulo{
     font-size: 4em;
 }
@@ -9,9 +18,10 @@
 
 #turno{
     font-size: 1em;
-    border: 3px solid  rgb(116, 86, 199);
-    padding: 3px;
+    border: 3px ;
+    padding: 5px;
     font-style: italic;
+    border-style: dashed;
 }
 
 .btn{ 
@@ -28,3 +38,4 @@
     color: gray;
     font-size: 2em;
 }
+

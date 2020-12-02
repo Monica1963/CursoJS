@@ -25,12 +25,13 @@ const iniNuevo = () =>{
         document.querySelector("#turno").innerHTML = "Iniciando nueva partida...";
         setTimeout(() => {
                 limpiar();
-              }, 1000);
+              }, 2000);
 }
 
-const empate = () => {
+const empate = () =>{
        // document.querySelector("#turno").innerHTML = "Fue un Empate";
         alert("Fue un Empate!!");
+        
         setTimeout(() => {
                 iniNuevo();  
         }, 1000);
@@ -41,11 +42,12 @@ const mensajeGanador = () =>{
         contador % 2 === 0 
         ? jugador = "2 " + "&#9874;"
         : jugador = "1 " + "&#9863;";
+        
         document.querySelector("#turno").innerHTML = "Ganó el jugador...." + jugador;
         
         setTimeout(() => {
                 iniNuevo();  
-        }, 1000);
+        }, 2000);
         
 }
 
@@ -98,7 +100,9 @@ const cambiarColor = () =>{
     
     document.getElementById("te").style.color = armaColor(); 
     
-    document.getElementById("ti").style.color = armaColor();        
+    document.getElementById("ti").style.color = armaColor();  
+    
+    document.getElementById("turno").style.borderColor = armaColor();
   
 }
 
