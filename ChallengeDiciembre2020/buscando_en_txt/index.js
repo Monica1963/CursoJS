@@ -27,6 +27,36 @@ const buscarNumeros = (array) =>{
     }
 }
 
+//averiguar que combinación de 3 números da como resultado 2020.
+const buscar3Numeros = (array) =>{
+   
+  //Parseo a int
+  for (let i = 0; i < array.length; i++) {
+      array[i] = Number.parseInt(array[i]);
+  }
+
+  for(let i=0; i< array.length-2; i++){
+              
+        for(let j=i+1; j< array.length-1; j++){
+
+          for(let h=j+1; h< array.length; h++){
+            
+            if((array[i] + array[j] + array[h]) == valorBuscado){
+                const num1 = array[i];
+                const num2= array[j];
+                const num3= array[h];
+                document.getElementById("buscado").innerHTML += (`Valores encontrados: ${num1}, ${num2} y ${num3}`);
+                document.getElementById("buscado").innerHTML += (`<br>${num1} * ${num2} * ${num3} = ${num1 * num2 *  num3}`);
+               
+            }
+        }
+      }
+    
+    }
+}
+
+
+
 const armarArray = (contenido) =>{
     //armo el array con el archivo leido
     array = contenido.toString().split("\n");
@@ -55,7 +85,7 @@ function leerArchivo(e) {
     
     armarArray(contenido);
   
-    buscarNumeros(array);
+    buscar3Numeros(array);
   }
   
   document.getElementById('file-input').addEventListener('change', leerArchivo, false);
